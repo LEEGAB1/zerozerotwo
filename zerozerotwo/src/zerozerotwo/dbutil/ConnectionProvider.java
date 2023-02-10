@@ -14,8 +14,8 @@ public class ConnectionProvider {
 		BasicDataSource ds = new BasicDataSource();
 		ds.setUrl("jdbc:mysql://localhost:3306/zerozerotwo");
 		ds.setDriverClassName("com.mysql.cj.jdbc.Driver");
-		ds.setUsername("root");
-		ds.setPassword("root");
+		ds.setUsername("user1");
+		ds.setPassword("user1");
 		//1
 		
 		dataSource = ds;
