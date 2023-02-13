@@ -29,7 +29,7 @@ public class GasStationDAOImpl implements GasStationDAO{
 
 	@Override
 	public List<GasStation> gasStationSelectByStoreName(Connection conn, String storeName) {
-		String sql = "SELECT * FROM gas_station WHERE storeName LIKE '%?%'";
+		String sql = "SELECT * FROM gas_station WHERE storename LIKE '%?%'";
 		
 		try(PreparedStatement stmt = conn.prepareStatement(sql)) {
 			stmt.setString(1, storeName);

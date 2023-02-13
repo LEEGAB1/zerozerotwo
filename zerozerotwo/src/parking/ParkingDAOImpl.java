@@ -28,7 +28,7 @@ public class ParkingDAOImpl  implements ParkinglotDAO {
 
 	@Override
 	public List<Parkinglot> parkinglotselectByStoreName(Connection conn, String storeName) {
-		String sql = "SELECT * FROM parkinglot WHERE storeName LIKE '%?%'";
+		String sql = "SELECT * FROM parkinglot WHERE storename LIKE '%?%'";
 		
 		try(PreparedStatement stmt = conn.prepareStatement(sql)) {
 			stmt.setString(1, storeName);
