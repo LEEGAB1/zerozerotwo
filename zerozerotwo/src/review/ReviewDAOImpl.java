@@ -1,39 +1,38 @@
 package review;
 
+import java.sql.Connection;
+import java.sql.ResultSet;
 import java.util.List;
 
 public class ReviewDAOImpl implements ReviewDAO{
 
 	@Override
-	public List<String> reviewSelect() {
-		// TODO Auto-generated method stub
+	public List<Review> reviewSelect(Connection conn) {
 		return null;
 	}
 
 	@Override
-	public int reviewSelectByStoreName() {
-		// TODO Auto-generated method stub
+	public List<Review> reviewSelectByStoreName(Connection conn) {
+		return null;
+	}
+
+	@Override
+	public List<Review> reviewSelectBynickname(Connection conn) {
+		return null;
+	}
+
+	@Override
+	public int reviewdelete(Connection conn) {
 		return 0;
 	}
 
 	@Override
-	public int reviewSelectBynickname() {
-		// TODO Auto-generated method stub
+	public int reviewInsert(Connection conn) {
 		return 0;
 	}
 
-	@Override
-	public int reviewdelete() {
-		// TODO Auto-generated method stub
-		return 0;
+	private Review resultMapping(ResultSet rs) throws SQLException {
+		
 	}
-
-	@Override
-	public int reviewInsert() {
-		// TODO Auto-generated method stub
-		return 0;
-	}
-
-
 
 }
