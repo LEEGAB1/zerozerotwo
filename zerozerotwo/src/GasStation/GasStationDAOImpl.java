@@ -1,12 +1,18 @@
 package GasStation;
 
+import java.sql.Connection;
+import java.sql.PreparedStatement;
+import java.sql.ResultSet;
 import java.util.List;
 
 public class GasStationDAOImpl implements GasStationDAO{
 
 	@Override
-	public List<String> gasStationSelect() {
-		// TODO Auto-generated method stub
+	public List<String> gasStationSelect(Connection conn) {
+		String sql = "select * from parkinglot";
+		
+		try(PreparedStatement stmt = conn.prepareStatement(sql);
+				ResultSet rs = stmt.executeQuery())
 		return null;
 	}
 
