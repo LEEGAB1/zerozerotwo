@@ -105,7 +105,7 @@ public class Parkinglot {
 	public String toString() {
 		return "Parkinglot [storename=" + storename + ", storeaddress=" + storeaddress + ", totalnum=" + totalnum
 				+ ", usenum=" + usenum + ", availablenum=" + availablenum + ", tenprice=" + tenprice + ", dayprice="
-				+ dayprice + ", X=" + X + ", Y=" + Y + "]";
+				+ dayprice + ", X=" + X + ", Y=" + Y + "]\n";
 	}
 	
 	
