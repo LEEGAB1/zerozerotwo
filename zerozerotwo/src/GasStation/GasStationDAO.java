@@ -1,11 +1,12 @@
 package GasStation;
 
+import java.sql.Connection;
 import java.util.List;
 
 public interface GasStationDAO {
 	
-	List<String> gasStationSelect();
-	int gasStationSelectByStoreName(String storeName);
-	int gasStationUpdate(int price);
+	List<GasStation> gasStationSelect(Connection conn);
+	List<GasStation> gasStationSelectByStoreName(Connection conn, String storeName);
+	int gasStationUpdate(Connection conn, GasStation gasstation);
 
 }
