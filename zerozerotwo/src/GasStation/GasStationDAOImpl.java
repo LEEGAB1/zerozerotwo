@@ -22,7 +22,7 @@ public class GasStationDAOImpl implements GasStationDAO{
 			return list;
 		} catch (SQLException e) {
 			e.printStackTrace();
-			throw new RuntimeException("주유소 조회 작업 중 예외 발생", e);
+			throw new RuntimeException("주유소 총 조회 작업 중 예외 발생", e);
 		}
 	}
 

@@ -1,10 +1,11 @@
 package parking;
 
+import java.sql.Connection;
 import java.util.List;
 
 public interface ParkinglotDAO {
-	List<String> parkinglotSelect();
-	int parkinglotselectByStoreName(String storeName);
-	int parkinglotUpdate(int price);
+	List<Parkinglot> parkinglotSelect(Connection conn);
+	List<Parkinglot> parkinglotselectByStoreName(Connection conn, String storeName);
+	int parkinglotUpdate(Connection conn, Parkinglot parkinglot);
 	
 }
