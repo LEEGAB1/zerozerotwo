@@ -10,8 +10,8 @@ import java.util.List;
 public class GasStationDAOImpl implements GasStationDAO{
 
 	@Override
-	public List<GasStation> gasStationSelect(Connection conn) {
-		String sql = "SELECT * FROM gas_station";
+	public List<GasStation> gasStationSelect(Connection conn, String location) {
+		String sql = "SELECT * FROM " + location +"_gas_station";
 		
 		try(PreparedStatement stmt = conn.prepareStatement(sql);
 				ResultSet rs = stmt.executeQuery()) {
@@ -28,8 +28,8 @@ public class GasStationDAOImpl implements GasStationDAO{
 
 
 	@Override
-	public List<GasStation> gasStationSelectByStoreName(Connection conn, String storeName) {
-		String sql = "SELECT * FROM gas_station WHERE storename LIKE '%?%'";
+	public List<GasStation> gasStationSelectByStoreName(Connection conn, String storeName, String location) {
+		String sql = "SELECT * FROM " + location + "_gas_station WHERE storename LIKE '%?%'";
 		
 		try(PreparedStatement stmt = conn.prepareStatement(sql)) {
 			stmt.setString(1, storeName);
@@ -48,8 +48,8 @@ public class GasStationDAOImpl implements GasStationDAO{
 	}
 
 	@Override
-	public int gasStationUpdate(Connection conn, GasStation gasstation) {
-		String sql = "UPDATE gas_station SET p_gasoline=?, gasoline=?, diesel =?";
+	public int gasStationUpdate(Connection conn, GasStation gasstation, String location) {
+		String sql = "UPDATE " + location + "_gas_station SET p_gasoline=?, gasoline=?, diesel =?";
 		
 		try(PreparedStatement stmt = conn.prepareStatement(sql)){
 			stmt.setInt(1, gasstation.getP_gasoline());
