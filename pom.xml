@@ -14,8 +14,7 @@
 </repositories>
   
   <dependencies>
-  
-  		<dependency>
+  	<dependency>
         <groupId>e-iceblue</groupId>
         <artifactId>spire.xls</artifactId>
         <version>13.1.3</version>

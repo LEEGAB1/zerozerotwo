@@ -15,6 +15,7 @@ public class GasStationDAOImpl implements GasStationDAO{
 		
 		try(PreparedStatement stmt = conn.prepareStatement(sql);
 				ResultSet rs = stmt.executeQuery()) {
+			
 			List<GasStation> list = new ArrayList<>();
 			while (rs.next()) {
 				list.add(resultMapping(rs));
