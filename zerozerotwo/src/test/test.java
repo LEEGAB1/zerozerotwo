@@ -1,9 +1,12 @@
-package GasStation;
+package test;
 
 import java.sql.Connection;
 import java.sql.SQLException;
 import java.util.List;
 
+import GasStation.GasStation;
+import GasStation.GasStationDAO;
+import GasStation.GasStationDAOImpl;
 import parking.ParkingDAOImpl;
 import parking.Parkinglot;
 import parking.ParkinglotDAO;
