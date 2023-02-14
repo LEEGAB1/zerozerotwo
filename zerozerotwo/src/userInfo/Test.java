@@ -12,8 +12,9 @@ public class Test {
 		dao = new UserInfoDAOImpl();
 		conn = ConnectionProvider.getConnection();
 		
-	
-		System.out.println(dao.InsertUserInfo(conn, "jinju", "jinju", "jinju"));
+		System.out.println(dao.deleteUserInfo(conn, "asd"));
+//		System.out.println(dao.selectUserInfo(conn, "jinju"));
+//		System.out.println(dao.InsertUserInfo(conn, "chlhg1234", "123", "456456"));
 		
 		
 		
