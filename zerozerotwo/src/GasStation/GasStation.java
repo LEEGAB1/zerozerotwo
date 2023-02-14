@@ -1,14 +1,16 @@
 package GasStation;
 
 public class GasStation {
+	private String region;
 	private String storename;
 	private String storeaddress;
-	private String storenumber;
 	private String storebrand;
+	private String storenumber;
 	private String self;
-	private int p_gasoline;
-	private int gasoline;
-	private int diesel;
+	private String p_gasoline;
+	private String gasoline;
+	private String diesel;
+	private String kerosene;
 	private String X;
 	private String Y;
 	
@@ -16,19 +18,29 @@ public class GasStation {
 		super();
 	}
 
-	public GasStation(String storename, String storeaddress, String storenumber, String storebrand, String self,
-			int p_gasoline, int gasoline, int diesel, String x, String y) {
+	public GasStation(String region, String storename, String storeaddress, String storebrand, String storenumber,
+			String self, String p_gasoline, String gasoline, String diesel, String kerosene, String x, String y) {
 		super();
+		this.region = region;
 		this.storename = storename;
 		this.storeaddress = storeaddress;
-		this.storenumber = storenumber;
 		this.storebrand = storebrand;
+		this.storenumber = storenumber;
 		this.self = self;
 		this.p_gasoline = p_gasoline;
 		this.gasoline = gasoline;
 		this.diesel = diesel;
+		this.kerosene = kerosene;
 		X = x;
 		Y = y;
+	}
+
+	public String getRegion() {
+		return region;
+	}
+
+	public void setRegion(String region) {
+		this.region = region;
 	}
 
 	public String getStorename() {
@@ -47,20 +59,20 @@ public class GasStation {
 		this.storeaddress = storeaddress;
 	}
 
-	public String getStorenumber() {
-		return storenumber;
-	}
-
-	public void setStorenumber(String storenumber) {
-		this.storenumber = storenumber;
-	}
-
 	public String getStorebrand() {
 		return storebrand;
 	}
 
 	public void setStorebrand(String storebrand) {
 		this.storebrand = storebrand;
+	}
+
+	public String getStorenumber() {
+		return storenumber;
+	}
+
+	public void setStorenumber(String storenumber) {
+		this.storenumber = storenumber;
 	}
 
 	public String getSelf() {
@@ -71,28 +83,36 @@ public class GasStation {
 		this.self = self;
 	}
 
-	public int getP_gasoline() {
+	public String getP_gasoline() {
 		return p_gasoline;
 	}
 
-	public void setP_gasoline(int p_gasoline) {
+	public void setP_gasoline(String p_gasoline) {
 		this.p_gasoline = p_gasoline;
 	}
 
-	public int getGasoline() {
+	public String getGasoline() {
 		return gasoline;
 	}
 
-	public void setGasoline(int gasoline) {
+	public void setGasoline(String gasoline) {
 		this.gasoline = gasoline;
 	}
 
-	public int getDiesel() {
+	public String getDiesel() {
 		return diesel;
 	}
 
-	public void setDiesel(int diesel) {
+	public void setDiesel(String diesel) {
 		this.diesel = diesel;
+	}
+
+	public String getKerosene() {
+		return kerosene;
+	}
+
+	public void setKerosene(String kerosene) {
+		this.kerosene = kerosene;
 	}
 
 	public String getX() {
@@ -113,10 +133,13 @@ public class GasStation {
 
 	@Override
 	public String toString() {
-		return "GasStation [storename=" + storename + ", storeaddress=" + storeaddress + ", storenumber=" + storenumber
-				+ ", storebrand=" + storebrand + ", self=" + self + ", p_gasoline=" + p_gasoline + ", gasoline="
-				+ gasoline + ", diesel=" + diesel + ", X=" + X + ", Y=" + Y + "]";
+		return "GasStation [region=" + region + ", storename=" + storename + ", storeaddress=" + storeaddress
+				+ ", storebrand=" + storebrand + ", storenumber=" + storenumber + ", self=" + self + ", p_gasoline="
+				+ p_gasoline + ", gasoline=" + gasoline + ", diesel=" + diesel + ", kerosene=" + kerosene + ", X=" + X
+				+ ", Y=" + Y + "]\n";
 	}
+
+	
 
 	
 	
