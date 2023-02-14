@@ -6,7 +6,7 @@ import java.nio.charset.Charset;
 public class ExcelToCsv {
 	   public static void main(String[] args) {
 
-		   	String name = "해운대구";
+		   	String name = "yungdo_gu";
 		   
 	        //Create a workbook
 	        Workbook workbook = new Workbook();
