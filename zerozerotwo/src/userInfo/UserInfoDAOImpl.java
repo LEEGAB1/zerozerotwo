@@ -22,6 +22,7 @@ public class UserInfoDAOImpl implements UserInfoDAO{
 			e.printStackTrace();
 			throw new RuntimeException("DB id 조회중에 오류가 발생했습니다.", e);
 		}
+		
 	}
 
 	// 닉네임 있는지 조회
