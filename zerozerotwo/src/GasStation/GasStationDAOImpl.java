@@ -63,6 +63,31 @@ public class GasStationDAOImpl implements GasStationDAO{
 		}
 	}
 	
+	@Override
+	public int gasStationInsert(Connection conn, GasStation gasstation, String location) {
+		String sql = "INSERT INTO " + location + "_gas_station "
+				+ "(storename, storeaddress, storenumber, storebrand, self, p_gasoline, gasoline, diesel) "
+				+ "values (?,?,?,?,?,?,?,?)";
+		
+		try(PreparedStatement stmt = conn.prepareStatement(sql)) {
+			stmt.setString(1, gasstation.getStorename());
+			stmt.setString(2, gasstation.getStoreaddress());
+			stmt.setString(3, gasstation.getStorenumber());
+			stmt.setString(4, gasstation.getStorebrand());
+			stmt.setString(5, gasstation.getSelf());
+			stmt.setString(6, gasstation.getP_gasoline());
+			stmt.setString(7, gasstation.getGasoline());
+			stmt.setString(8, gasstation.getDiesel());
+			
+			return stmt.executeUpdate();
+			
+		} catch (SQLException e) {
+			e.printStackTrace();
+			throw new RuntimeException("주유소 넣기 작업 중 예외 발생", e);
+		}
+	}
+
+	
 	private GasStation resultMapping(ResultSet rs) throws SQLException{
 		GasStation gasstation = new GasStation();
 		gasstation.setStorename(rs.getString("storename"));
@@ -79,5 +104,7 @@ public class GasStationDAOImpl implements GasStationDAO{
 		return gasstation;
 		
 	}
+
+
 
 }

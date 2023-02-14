@@ -2,6 +2,8 @@ package Data;
 
 import java.io.File;
 import java.io.IOException;
+import java.sql.Connection;
+import java.sql.SQLException;
 import java.util.List;
 
 import com.fasterxml.jackson.databind.MappingIterator;
@@ -10,10 +12,13 @@ import com.fasterxml.jackson.dataformat.csv.CsvSchema;
 import com.fasterxml.jackson.dataformat.csv.CsvSchema.ColumnType;
 
 import GasStation.GasStation;
+import GasStation.GasStationDAO;
+import GasStation.GasStationDAOImpl;
+import zerozerotwo.dbutil.ConnectionProvider;
 
 public class CsvToList {
-	public static void main(String[] args) throws IOException {
-		String name = "금정구";
+	public static void main(String[] args) throws IOException, SQLException {
+		String location = "yungdo_gu";
 		
 		CsvSchema schema = new CsvSchema.Builder()//규칙을 설명하는 타임
 				
@@ -34,10 +39,18 @@ public class CsvToList {
 		MappingIterator<GasStation> iter = new CsvMapper()
 				.readerFor(GasStation.class)
 				.with(schema)
-				.readValues(new File("C:\\Users\\GGG\\git\\zerozerotwo\\output\\" + name + ".csv"));
+				.readValues(new File("C:\\Users\\GGG\\git\\zerozerotwo\\output\\" + location + ".csv"));
 		
 		List<GasStation> list = iter.readAll();
 		System.out.println(list);
+		
+		//---------------------------------------------------------------------------------------
+		Connection conn = ConnectionProvider.getConnection();
+		GasStationDAO dao = new GasStationDAOImpl();
+		
+		for (int i = 1; i < list.size(); i++) {
+			System.out.print(dao.gasStationInsert(conn, list.get(i), location));			
+		}
 		
 	}
 }
