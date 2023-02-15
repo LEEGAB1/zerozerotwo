@@ -7,6 +7,6 @@ public interface UserInfoDAO {
 	int UserInfoSelectId(Connection conn, String id);
 	int UserInfoSelectName(Connection conn, String name);
 	int InsertUserInfo(Connection conn, String id, String pw, String name);
-	List<userInfo> selectUserInfo(Connection conn, String id);
+	List<userInfo> selectUserInfo(Connection conn);
 	int deleteUserInfo(Connection conn, String id);
 }

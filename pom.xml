@@ -83,7 +83,7 @@
 
 
 	<build>
-		<sourceDirectory>src</sourceDirectory>
+		<sourceDirectory>/zerozerotwo/src</sourceDirectory>
 		<plugins>
 			<plugin>
 				<artifactId>maven-compiler-plugin</artifactId>
