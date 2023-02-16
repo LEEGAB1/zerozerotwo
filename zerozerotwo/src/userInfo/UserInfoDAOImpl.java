@@ -22,6 +22,7 @@ public class UserInfoDAOImpl implements UserInfoDAO{
 			e.printStackTrace();
 			throw new RuntimeException("DB id 조회중에 오류가 발생했습니다.", e);
 		}
+		
 	}
 
 	// 닉네임 있는지 조회
@@ -57,8 +58,8 @@ public class UserInfoDAOImpl implements UserInfoDAO{
 
 	// 고객정보 조회
 	@Override
-	public List<userInfo> selectUserInfo(Connection conn, String userId) {
-		String sql = "SELECT * FROM user_info WHERE id = '" + userId +"'" ;
+	public List<userInfo> selectUserInfo(Connection conn) {
+		String sql = "SELECT * FROM user_info ";
 		List<userInfo> list = new ArrayList<>();
 		try (PreparedStatement stmt = conn.prepareStatement(sql)) {
 				ResultSet rs = stmt.executeQuery();
